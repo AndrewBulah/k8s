@@ -1,9 +1,9 @@
 name: Setup Minikube Cluster
 
 on:
-  pull_request:
+  pull_request:https://github.com/AndrewBulah/k8s/tree/main
     branches:
-      - main
+      - main  
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
 
       - name: Start Minikube
         run: |
-          minikube start --driver=none
+          minikube start --driver=docker
 
       - name: Set kubectl context
         run: |
